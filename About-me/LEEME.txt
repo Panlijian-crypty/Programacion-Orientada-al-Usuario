@@ -1,0 +1,32 @@
+PÁGINA PERSONAL DE PAN LIJIAN WONG
+
+Descomprime el ZIP y abre index.html en un navegador.
+Mantén los archivos y la carpeta imagenes juntos para cargar el diseño.
+
+PÁGINAS
+index.html: foto personal, título, datos personales, menú, perfil y pie.
+estudios.html: imagen ilustrativa, título, menú y educación en tablas.
+intereses.html: imagen ilustrativa, título, menú, intereses, video,
+música favorita y derechos de autor.
+
+El sitio utiliza HTML5 semántico y una hoja de estilos sencilla.
+Incluye imágenes ilustrativas, enlaces externos y reproductores de
+YouTube y Spotify. Los reproductores requieren Internet; se incluyen
+enlaces directos por si la reproducción incrustada no está disponible.
+No se comprobó la reproducción de los servicios externos.
+
+Se usaron únicamente datos proporcionados por el autor o verificados en
+sus archivos y eCampus. No se incluyen documentos personales, teléfonos
+ni direcciones. Los 12 cursos se consultaron el 10 de octubre de 2026.
+
+GIT
+Los cambios se registraron con Git en la rama main.
+historial-git.txt muestra los commits y historial.gitbundle conserva el
+repositorio. Para recuperarlo, ejecuta desde esta carpeta:
+git clone historial.gitbundle pagina-personal
+
+ENTREGA
+La tarea pide el enlace a la carpeta en un repositorio público de GitHub.
+El programa está en la carpeta About-me del repositorio público
+Programacion-Orientada-al-Usuario en GitHub.
+La entrega en Moodle se realiza pegando el enlace a esta carpeta.

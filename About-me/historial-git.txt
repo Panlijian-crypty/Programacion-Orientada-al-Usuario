@@ -1,0 +1,20 @@
+Commit: f09f075
+Fecha: 2026-10-11T00:10:51+03:00
+Autor: Pan Lijian Wong
+Cambio: Incorporar la foto personal en el currículum
+
+Commit: 20bfd69
+Fecha: 2026-10-10T23:59:28+03:00
+Autor: Pan Lijian Wong
+Cambio: Simplificar el diseño con fondo blanco, texto negro y navegación básica
+
+Commit: d96749b
+Fecha: 2026-10-10T23:41:46+03:00
+Autor: Pan Lijian Wong
+Cambio: Rehacer las tres páginas según los esquemas con HTML semántico y diseño adaptable
+
+Commit: 95ddd45
+Fecha: 2026-10-10T23:40:54+03:00
+Autor: Pan Lijian Wong
+Cambio: Registrar la versión inicial de la página personal
+

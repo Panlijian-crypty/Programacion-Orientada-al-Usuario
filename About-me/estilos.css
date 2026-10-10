@@ -1,0 +1,32 @@
+body {
+    max-width: 800px;
+    margin: 24px auto;
+    padding: 0 16px;
+    background: white;
+    color: black;
+    font-family: Arial, sans-serif;
+    line-height: 1.5;
+}
+h1 { font-size: 28px; }
+h2 { font-size: 22px; }
+h3 { font-size: 18px; }
+a { color: black; }
+nav { margin: 24px 0; }
+nav a { display: inline-block; margin-right: 16px; }
+nav a[aria-current="page"] { font-weight: bold; }
+section { margin-bottom: 28px; }
+dt { font-weight: bold; }
+dd { margin: 0 0 10px; overflow-wrap: anywhere; }
+.tabla { overflow-x: auto; }
+table { border-collapse: collapse; width: 100%; }
+caption { text-align: left; margin-bottom: 8px; }
+th, td { border: 1px solid #aaa; padding: 8px; text-align: left; }
+tbody th { font-weight: normal; }
+figure { margin: 16px 0; }
+img { max-width: 100%; height: auto; }
+iframe { display: block; border: 0; width: 100%; }
+.video { max-width: 640px; aspect-ratio: 16 / 9; height: auto; }
+.reproductor { max-width: 640px; height: 152px; }
+footer { margin-top: 28px; border-top: 1px solid #aaa; font-size: 14px; }
+.saltar { position: absolute; left: -10000px; }
+.saltar:focus { position: static; }
