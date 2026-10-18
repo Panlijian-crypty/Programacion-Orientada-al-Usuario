@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Control de cambios con Git en proyectos de software</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <header>
+            <h1>Control de cambios con Git en proyectos de software</h1>
+            <p class="autor">Pan Lijian Wong</p>
+            <p class="afiliacion">Técnico en Desarrollo de Software<br>Universidad Centroamericana José Simeón Cañas</p>
+            <p class="contacto">kw242007@gmail.com</p>
+        </header>
+
+        <main id="articulo" class="articulo">
+            <section>
+                <h2>Resumen</h2>
+                <p class="resumen">Este artículo analiza el uso básico de Git para organizar cambios en un proyecto de software. El objetivo es comprobar cómo los commits y las ramas permiten conservar versiones e identificar modificaciones incompatibles. Se revisó la documentación oficial y se realizó una prueba local con un archivo de texto, dos ramas y cambios sobre una misma línea. Se registraron cuatro commits y un conflicto de integración, resuelto mediante edición manual. Los resultados muestran que el historial conserva ambas líneas de trabajo, aunque la elección del contenido final requiere intervención humana. Se recomienda registrar cambios pequeños y revisar las diferencias antes de integrarlos.</p>
+                <p class="palabras-clave"><strong>Palabras clave:</strong> commits; control de versiones; git; integración; ramas</p>
+            </section>
+
+            <section>
+                <h2>I. Introducción</h2>
+                <p>Guardar archivos como «final» y «final-corregido» dificulta reconocer qué cambió. Un repositorio de Git ofrece una alternativa para registrar el trabajo; el comando git init permite crearlo localmente [1]. <strong>El objetivo de este artículo es comprobar cómo Git registra versiones y detecta un conflicto entre dos ramas.</strong> Esta práctica resulta útil para comprender situaciones comunes en proyectos universitarios.</p>
+            </section>
+
+            <section>
+                <h2>II. Marco teórico</h2>
+                <h3>A. Preparación y registro de cambios</h3>
+                <p>Git distingue entre los archivos de trabajo y el área de preparación. El comando git add incorpora al índice el contenido que se desea registrar [2]. Después, git commit crea una confirmación con el contenido preparado y un mensaje descriptivo [3]. Por eso, guardar un archivo en el editor no equivale a registrar una versión.</p>
+                <h3>B. Ramas e integración</h3>
+                <p>Las ramas permiten mantener líneas de trabajo diferentes; git branch sirve para crearlas y consultarlas [4]. Para incorporar cambios de otra rama se utiliza git merge. Cuando existen modificaciones incompatibles, la integración puede detenerse y requerir una resolución manual [5].</p>
+            </section>
+
+            <section>
+                <h2>III. Metodología o desarrollo</h2>
+                <p>Se realizó una prueba local con Git 2.51.1 y el archivo saludo.txt, sin repositorio remoto. El procedimiento fue:</p>
+                <ol>
+                    <li>Crear la rama main, escribir «Hola» y registrar el primer commit.</li>
+                    <li>Crear la rama mejora, cambiar el texto a «Hola, equipo» y confirmar.</li>
+                    <li>Volver a main, escribir «Hola, clase» y registrar otro commit.</li>
+                    <li>Ejecutar git merge mejora y comprobar el conflicto.</li>
+                    <li>Resolver con «Hola, equipo de clase», preparar el archivo y confirmar la integración.</li>
+                </ol>
+                <p>Se revisaron tres indicadores:</p>
+                <ul>
+                    <li>Cantidad de ramas conservadas.</li>
+                    <li>Cantidad de commits en el historial final.</li>
+                    <li>Archivos en conflicto y estado posterior a la resolución.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>IV. Resultados y discusión</h2>
+                <table>
+                    <caption class="titulo-tabla">Tabla I. Resultados de la prueba local</caption>
+                    <thead>
+                        <tr>
+                            <th>Indicador</th>
+                            <th>Resultado</th>
+                            <th>Comprobación</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Ramas conservadas</td>
+                            <td>2</td>
+                            <td>git branch</td>
+                        </tr>
+                        <tr>
+                            <td>Commits finales</td>
+                            <td>4</td>
+                            <td>git rev-list --count HEAD</td>
+                        </tr>
+                        <tr>
+                            <td>Archivos en conflicto</td>
+                            <td>1</td>
+                            <td>git status durante la integración</td>
+                        </tr>
+                        <tr>
+                            <td>Cambios pendientes al terminar</td>
+                            <td>0</td>
+                            <td>git status --porcelain</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p>El cuarto commit corresponde a la resolución de la integración. El conflicto mostró que Git no podía elegir automáticamente entre dos saludos distintos sobre la misma línea. Tras editar el archivo, el historial conservó los cambios de ambas ramas. <em>Estos resultados describen únicamente una prueba pequeña:</em> no permiten medir productividad, tiempos de trabajo ni comportamiento de equipos grandes.</p>
+            </section>
+
+            <section>
+                <h2>V. Conclusiones</h2>
+                <p>Se cumplió el objetivo al registrar versiones y provocar un conflicto controlado. Git mantuvo el historial, mientras que la decisión sobre el saludo final fue manual. Se recomienda confirmar cambios pequeños y descriptivos. Como continuación, conviene repetir la prueba con varios archivos y colaboradores para analizar situaciones de integración más variadas.</p>
+            </section>
+
+            <section>
+                <h2>Referencias</h2>
+                <ol class="referencias">
+                    <li>[1] Git Project, «git-init», <em>Documentación de Git</em>, 2026. [En línea]. Disponible: <a href="https://git-scm.com/docs/git-init">https://git-scm.com/docs/git-init</a>. [Consulta: 16-oct-2026].</li>
+                    <li>[2] Git Project, «git-add», <em>Documentación de Git</em>, 2026. [En línea]. Disponible: <a href="https://git-scm.com/docs/git-add">https://git-scm.com/docs/git-add</a>. [Consulta: 16-oct-2026].</li>
+                    <li>[3] Git Project, «git-commit», <em>Documentación de Git</em>, 2026. [En línea]. Disponible: <a href="https://git-scm.com/docs/git-commit">https://git-scm.com/docs/git-commit</a>. [Consulta: 16-oct-2026].</li>
+                    <li>[4] Git Project, «git-branch», <em>Documentación de Git</em>, 2026. [En línea]. Disponible: <a href="https://git-scm.com/docs/git-branch">https://git-scm.com/docs/git-branch</a>. [Consulta: 16-oct-2026].</li>
+                    <li>[5] Git Project, «git-merge», <em>Documentación de Git</em>, 2026. [En línea]. Disponible: <a href="https://git-scm.com/docs/git-merge">https://git-scm.com/docs/git-merge</a>. [Consulta: 16-oct-2026].</li>
+                </ol>
+            </section>
+        </main>
+
+        <footer>
+            <p>Programación Orientada al Usuario · 16 de octubre de 2026.</p>
+            <p>Declaración de autoría: texto original preparado para esta actividad con apoyo de inteligencia artificial en la redacción, la elaboración de HTML y CSS y la ejecución y verificación de la prueba local.</p>
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,53 @@
+PRUEBA LOCAL DE GIT
+Fecha: 16 de octubre de 2026 (El Salvador)
+Entorno: git version 2.51.1
+
+La prueba se ejecutó con apoyo de IA en un repositorio temporal local, sin remoto.
+El nombre y el correo de Git son datos de prueba, no la identidad del estudiante.
+
+PROCEDIMIENTO REPRODUCIBLE
+git init -b main
+git config user.name "Prueba local"
+git config user.email "prueba@example.invalid"
+# Crear saludo.txt con el texto Hola.
+git add saludo.txt
+git commit -m "Agregar saludo"
+git branch mejora
+git switch mejora
+# Cambiar el contenido de saludo.txt a Hola, equipo.
+git add saludo.txt
+git commit -m "Mejorar saludo"
+git switch main
+# Cambiar el contenido de saludo.txt a Hola, clase.
+git add saludo.txt
+git commit -m "Personalizar saludo"
+git merge mejora
+# Se detecta un conflicto. Editar saludo.txt y dejar solo: Hola, equipo de clase.
+git add saludo.txt
+git commit -m "Resolver saludo"
+git branch
+git rev-list --count HEAD
+git status --porcelain
+git log --all --oneline --graph
+
+SALIDA AL INTEGRAR
+Auto-merging saludo.txt
+CONFLICT (content): Merge conflict in saludo.txt
+Automatic merge failed; fix conflicts and then commit the result.
+
+RESULTADOS
+Ramas: 2 (main y mejora)
+Commits alcanzables desde HEAD: 4
+Archivos en conflicto: 1 (saludo.txt)
+Cambios pendientes al final: 0
+Contenido final: Hola, equipo de clase
+
+HISTORIAL OBTENIDO
+*   87c727f Resolver saludo
+|\  
+| * 358d6d3 Mejorar saludo
+* | 641ab83 Personalizar saludo
+|/  
+* 2c00610 Agregar saludo
+
+Nota: los identificadores de los commits cambian al repetir la prueba.
