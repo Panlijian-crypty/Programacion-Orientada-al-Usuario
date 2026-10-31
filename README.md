@@ -28,3 +28,25 @@ Artículo IEEE a una columna sobre control de cambios con Git, con HTML semánti
 **[Ver la actividad completa](./actividad-css-basico/)**
 
 Archivos: `index.html`, `style.css`, `README.md` y `evidencia-git.txt`. Para visualizarla, descarga la carpeta y abre `index.html` manteniendo el CSS en la misma ubicación.
+
+## Ejercicios de JavaScript
+
+### Tabla de multiplicar
+
+Dado un número, se crea un arreglo con los resultados de su tabla de multiplicar del 1 al 10, usando un ciclo `for` y el método `push()`. El arreglo se muestra en la consola.
+
+**[Ver tabla-multiplicar.js](./ejercicios-javascript/tabla-multiplicar.js)**
+
+Para ejecutarlo, instala Node.js y abre una terminal en la carpeta raíz del repositorio:
+
+```bash
+node ejercicios-javascript/tabla-multiplicar.js
+```
+
+Con `numero = 1`, el arreglo resultante es:
+
+```text
+[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+```
+
+Cambia el valor de `numero` en el archivo para generar otra tabla.
