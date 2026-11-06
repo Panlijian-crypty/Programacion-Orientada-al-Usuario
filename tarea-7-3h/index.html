@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Control de inventario</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header class="encabezado">
+        <div class="contenedor encabezado-contenido">
+            <span class="etiqueta">JAVASCRIPT · MÓDULO 7</span>
+            <h1>Control de inventario</h1>
+            <p>Gestiona los productos y las existencias de una tienda de cuidado personal.</p>
+        </div>
+    </header>
+
+    <main class="contenedor">
+        <section class="resumen" aria-labelledby="titulo-resumen">
+            <h2 id="titulo-resumen">Resumen de productos visibles</h2>
+            <dl class="indicadores" aria-live="polite">
+                <div><dt>Productos</dt><dd id="total-productos">0</dd></div>
+                <div><dt>Unidades</dt><dd id="total-unidades">0</dd></div>
+                <div><dt>Valor en stock</dt><dd id="valor-total">$0.00</dd></div>
+                <div><dt>Agotados</dt><dd id="total-agotados">0</dd></div>
+            </dl>
+        </section>
+
+        <section class="panel" aria-labelledby="titulo-alta">
+            <h2 id="titulo-alta">Agregar producto</h2>
+            <form id="formulario-producto" novalidate>
+                <div class="campos">
+                    <label for="nombre">Nombre
+                        <input id="nombre" name="nombre" placeholder="Ej. Crema de avena" required>
+                    </label>
+                    <label for="categoria">Categoría
+                        <input id="categoria" name="categoria" list="categorias-sugeridas"
+                            placeholder="Escribe o elige" required>
+                        <datalist id="categorias-sugeridas"></datalist>
+                    </label>
+                    <label for="cantidad">Cantidad
+                        <input id="cantidad" name="cantidad" type="number" min="1" step="1" placeholder="Ej. 12" required>
+                    </label>
+                    <label for="precio">Precio unitario (USD)
+                        <input id="precio" name="precio" type="number" min="0" step="any" placeholder="Ej. 4.50" required>
+                    </label>
+                    <button class="btn-principal" type="submit">Agregar producto</button>
+                </div>
+                <p id="mensaje-error" class="mensaje-error" role="alert" hidden></p>
+            </form>
+        </section>
+
+        <section class="panel inventario" aria-labelledby="titulo-inventario">
+            <div class="barra-inventario">
+                <div>
+                    <h2 id="titulo-inventario">Productos en inventario</h2>
+                    <p id="mensaje-actividad" role="status">Filtra por categoría o actualiza un producto desde la tabla.</p>
+                </div>
+                <label for="filtro-categoria">Filtrar por categoría
+                    <select id="filtro-categoria">
+                        <option value="todas">Todas las categorías</option>
+                    </select>
+                </label>
+            </div>
+            <div class="tabla-scroll" role="region" aria-label="Tabla de inventario" tabindex="0">
+                <table aria-labelledby="titulo-inventario">
+                    <thead>
+                        <tr>
+                            <th scope="col">Producto</th>
+                            <th scope="col">Categoría</th>
+                            <th scope="col">Cantidad</th>
+                            <th scope="col">Precio unitario</th>
+                            <th scope="col">Subtotal</th>
+                            <th scope="col">Estado</th>
+                            <th scope="col">Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="cuerpo-inventario"></tbody>
+                </table>
+            </div>
+            <p id="mensaje-vacio" hidden>No hay productos en la categoría seleccionada.</p>
+        </section>
+    </main>
+</body>
+</html>
